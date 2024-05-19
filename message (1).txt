@@ -1,0 +1,60 @@
+Model 1 	Linear regression															
+Model Evaluation Results Interpretation																
+Mean Squared Error (MSE) on the Training Data																
+The Mean Squared Error (MSE) of the model on the training data is approximately 27.42. MSE is a measure of the average squared difference between the actual and predicted values. Lower values indicate better model performance. In this case, an MSE of 27.42 suggests that the model's predictions are not highly accurate, but further context is needed to assess whether this is an acceptable level of error for your specific application.																
+																
+R-squared (R²) on the Training Data																
+The R-squared (R²) value is approximately 0.336. R² represents the proportion of the variance in the dependent variable that is predictable from the independent variables. An R² value of 0.336 means that approximately 33.6% of the variance in the ESTIMATE values is explained by the model. This indicates a moderate fit, suggesting that there is significant room for improvement in the model.																
+																
+Confusion Matrix for Binned ESTIMATE Values																
+The confusion matrix provides insight into the performance of the model by showing how often predictions fall into certain bins. Here is the matrix:																
+																
+																
+Key Observations from the Confusion Matrix																
+Concentration in Bin 2: A significant portion of the predictions (577, 2309, 953) fall within Bin 2, suggesting that the model tends to predict values around this range frequently. This might indicate that the model is biased towards this bin, potentially underestimating or overestimating other bins.																
+Sparse Entries in Higher Bins: Very few predictions fall into higher bins (Bins 4 and above), indicating that the model struggles to accurately predict higher values of ESTIMATE.																
+Accuracy for Lower Bins: The predictions for lower bins (Bins 1 to 3) show some alignment but are still spread out, indicating that the model has some difficulty distinguishing between lower range values.																
+Recommendations for Improvement																
+Feature Engineering: Consider adding or engineering more features that may better capture the variability in ESTIMATE. This can include interactions between variables or new derived variables.																
+Model Complexity: Experiment with more complex models (e.g., decision trees, random forests, gradient boosting) that may better capture non-linear relationships.																
+Data Augmentation: If possible, gather more data to help the model learn better. More data can also help in balancing the distribution across bins.																
+Hyperparameter Tuning: Perform hyperparameter tuning using cross-validation to optimize the model's parameters for better performance.																
+																
+These steps can help in improving the model's performance and making more accurate predictions for the ESTIMATE values. If you have any further questions or need additional assistance, feel free to ask!																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+Model 2	Decision Tree															
+Best Hyperparameters																
+max_depth: None: This means the tree can grow until all leaves are pure or until all leaves contain fewer than min_samples_split samples.																
+min_samples_split: 5: This is the minimum number of samples required to split an internal node.																
+min_samples_leaf: 1: This is the minimum number of samples required to be at a leaf node.																
+Best Score																
+Best Score (MSE): 13.77. This is the Mean Squared Error achieved during cross-validation with the best set of hyperparameters. A lower MSE indicates better performance, and 13.77 is an improvement over the previous MSE of 27.42.																
